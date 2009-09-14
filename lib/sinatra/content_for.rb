@@ -14,7 +14,7 @@ module Sinatra
     # Your blocks can also receive values, which are passed to them
     # by <tt>yield_content</tt>
     def content_for(key, &block)
-      content_blocks[key.to_sym] << block
+      content_blocks[key.to_sym] << block if block_given?
     end
 
     # Render the captured blocks for a given key. For example:
@@ -37,12 +37,19 @@ module Sinatra
     #
     # *NOTICE* that you call this without an <tt>=</tt> sign. IE, 
     # in a <tt><% %></tt> block, and not in a <tt><%= %></tt> block.
+    #
+    # *NOTICE* 
+    # if you call from erubis, you call this with <tt>=</tt> sign.IE,
+    #in a <tt><%= %></tt> block, and not in a <tt><% %></tt> block.
     def yield_content(key, *args)
       content_blocks[key.to_sym].map do |content| 
         if respond_to?(:block_is_haml?) && block_is_haml?(content)
           capture_haml(*args, &content)
-        else
+        elsif Erubis::VERSION # this line may cause trouble..
+          content.binding.eval ' _buf = "" '
           content.call(*args)
+        else
+          content.call
         end
       end.join
     end
