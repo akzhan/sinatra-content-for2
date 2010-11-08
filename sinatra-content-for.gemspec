@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 Gem::Specification.new do |s|
   s.name    = "sinatra-content-for"
   s.version = "0.2"
