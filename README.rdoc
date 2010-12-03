@@ -27,7 +27,7 @@ an '=' block (<tt><%= %></tt>), but with Haml it uses <tt>= yield_content</tt>.
 Using an '=' block in ERB will output the content twice for each block,
 so if you have problems with that, make sure to check for this.
 
-<B>Note</b> Use <tt><%= yield_content ... %> in Erubis.
+<B>Note</b> Use <tt><%= yield_content ... %></tt> in Erubis.
 
 == Usage
 
