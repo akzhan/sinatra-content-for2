@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
-  s.name    = "sinatra-content-for"
-  s.version = "0.2"
-  s.date    = "2009-05-09"
+  s.name    = "sinatra-content-for-2"
+  s.version = "0.2.1"
+  s.date    = "2010-12-03"
 
   s.description = "Small Sinatra extension to add a content_for helper similar to Rails'"
   s.summary     = "Small Sinatra extension to add a content_for helper similar to Rails'"
@@ -27,8 +27,9 @@ Gem::Specification.new do |s|
 .gitignore
 LICENSE
 README.rdoc
-sinatra-content-for.gemspec
+sinatra-content-for-2.gemspec
 lib/sinatra/content_for.rb
 test/content_for_test.rb
 ]
 end
+
