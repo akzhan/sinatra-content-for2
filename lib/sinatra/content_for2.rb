@@ -42,10 +42,10 @@ module Sinatra
     # if you call from erubis, you call this with <tt>=</tt> sign.IE,
     #in a <tt><%= %></tt> block, and not in a <tt><% %></tt> block.
     def yield_content(key, *args)
-      content_blocks[key.to_sym].map do |content| 
+      content_blocks[key.to_sym].map do |content|
         if respond_to?(:block_is_haml?) && block_is_haml?(content)
           capture_haml(*args, &content)
-        elsif Erubis::VERSION # this line may cause trouble..
+        elsif defined?(Erubis)
           content.binding.eval ' _buf = "" '
           content.call(*args)
         else
