@@ -1,5 +1,5 @@
 module Sinatra
-  module ContentFor
+  module ContentFor2
     # Capture a block of content to be rendered later. For example:
     #
     #     <% content_for :head do %>
@@ -61,5 +61,5 @@ module Sinatra
       end
   end
 
-  helpers ContentFor
+  helpers ContentFor2
 end

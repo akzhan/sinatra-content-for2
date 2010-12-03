@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name    = "sinatra-content-for-2"
+  s.name    = "sinatra-content-for2"
   s.version = "0.2.1"
   s.date    = "2010-12-03"
 
@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
 .gitignore
 LICENSE
 README.rdoc
-sinatra-content-for-2.gemspec
-lib/sinatra/content_for.rb
+sinatra-content-for2.gemspec
+lib/sinatra/content_for2.rb
 test/content_for_test.rb
 ]
 end
