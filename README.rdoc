@@ -1,4 +1,4 @@
-= ContentFor
+= ContentFor2
 
 Small extension for the Sinatra[http://sinatrarb.com] web framework
 that allows you to use the following helpers in your views:
@@ -27,12 +27,14 @@ an '=' block (<tt><%= %></tt>), but with Haml it uses <tt>= yield_content</tt>.
 Using an '=' block in ERB will output the content twice for each block,
 so if you have problems with that, make sure to check for this.
 
+<B>Note</b> Use <tt><%= yield_content ... %> in Erubis.
+
 == Usage
 
 If you're writing "classic" style apps, then requring 
-<tt>sinatra/content_for</tt> should be enough. If you're writing
+<tt>sinatra/content_for2</tt> should be enough. If you're writing
 "classy" apps, then you also need to call 
-<tt>helpers Sinatra::ContentFor</tt> in your app definition.
+<tt>helpers Sinatra::ContentFor2</tt> in your app definition.
 
 == And how is this useful?
 
@@ -47,3 +49,5 @@ be added to the layout.
 
 Code by foca[http://github.com/foca], inspired on the Ruby on Rails
 helpers with the same name. Haml support by mattly[http://github.com/mattly].
+Erubis support by hiroyuki[http://github.com/hryk].
+
